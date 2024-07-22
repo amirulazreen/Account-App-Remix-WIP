@@ -1,22 +1,25 @@
-import TrialBalance from "../components/TrialBalance";
-import { useLoaderData } from "@remix-run/react";
-import { getStoredNotes } from "../data/Transaction";
-
-export default function Test() {
-  const transactions = useLoaderData();
-  return <TrialBalance transaction={transactions} />;
+// import guideLink from "../styles/global.css";
+export default function guide() {
+  return (
+    <>
+      <div>
+        <h1>Accounting Rules</h1>
+        <p>Debit plus Credit must equal 0</p>
+        <p>Asset = Liability + Equity</p>
+        <div>
+          <h2>The Building Block</h2>
+          <ul>
+            <li>General Ledger</li>
+            <li>Trial Balance</li>
+            <li>Statement of Profit Loss</li>
+            <li>Statement of Comprehensive Income</li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export async function loader() {
-  const transactions = await getStoredNotes();
-  if (!transactions || transactions.length === 0) {
-    throw json(
-      { message: "Could not find any transaction" },
-      {
-        status: 404,
-        statusText: "Not Found",
-      }
-    );
-  }
-  return transactions;
-}
+// export function links() {
+//   return [{ rel: "stylesheet", href: guideLink }];
+// }

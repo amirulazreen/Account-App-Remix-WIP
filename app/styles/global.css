@@ -37,3 +37,8 @@ body {
 .nav-item a.active {
   color: var(--color-secondary-200);
 }
+
+.guide {
+  display: flex;
+  align-items: center;
+}
