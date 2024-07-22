@@ -1,0 +1,49 @@
+.content-add {
+  border: black solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  margin: 10px;
+}
+
+.add-title {
+  padding: 15px;
+}
+
+Form label {
+  padding: 15px;
+  font-size: 20px;
+}
+
+Form input {
+  padding: 15px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+Form input[type="text"] {
+  width: 70%;
+}
+
+Form input[type="number"] {
+  width: 20%;
+}
+
+.button-submit-text {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  border: black solid;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.button-submit-content {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
