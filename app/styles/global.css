@@ -4,11 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  color: black;
 }
 
 body {
   font-family: "Lato", sans-serif;
-  background: linear-gradient(135deg, #77797a, #d0cbd3);
+  background: linear-gradient(135deg, #dfdada, #ffffff);
 }
 
 .main-navigation {
@@ -30,12 +32,12 @@ body {
 
 .nav-item a {
   text-decoration: none;
-  color: var(--color-primary-10);
+  color: rgb(87, 82, 82);
 }
 
 .nav-item a:hover,
 .nav-item a.active {
-  color: var(--color-secondary-200);
+  color: rgb(3, 3, 3);
 }
 
 .guide {

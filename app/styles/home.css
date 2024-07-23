@@ -7,18 +7,5 @@
   text-align: center;
   background-color: white;
   height: 80vh;
-  background: linear-gradient(135deg, #ffffff, #121018);
-}
-
-footer {
-  font-size: 2rem;
-  gap: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: white;
-  height: 9vh;
-  color: white;
-  background: black;
+  background: linear-gradient(135deg, #ffffff, #afabb8);
 }

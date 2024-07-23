@@ -3,6 +3,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 5px;
+  border: black solid;
+  margin: 10px;
 }
 
 .transaction:hover {
@@ -26,6 +28,7 @@
 .transaction h2 {
   margin: 0 0 0.5rem 0;
   color: var(--color-primary-200);
+  margin-bottom: 10px;
 }
 
 .transaction p {
@@ -35,4 +38,24 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: black solid;
+  padding: 10px;
+  margin: 10px;
+}
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.back-button a:hover {
+  color: rgb(77, 71, 71);
 }

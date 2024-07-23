@@ -6,7 +6,6 @@ export default function Index() {
     <>
       <main className="home-container">
         <h1>Accounting Playground</h1>
-        <br />
         <p>Learn account by experimenting</p>
       </main>
     </>

@@ -1,12 +1,14 @@
-// import guideLink from "../styles/global.css";
+import guideLink from "../styles/guide.css";
 export default function guide() {
   return (
     <>
-      <div>
-        <h1>Accounting Rules</h1>
-        <p>Debit plus Credit must equal 0</p>
-        <p>Asset = Liability + Equity</p>
-        <div>
+      <div className="guide-container">
+        <div className="guide-content">
+          <h1>Accounting Rules</h1>
+          <p>Debit plus Credit must equal 0</p>
+          <p>Asset = Liability + Equity</p>
+        </div>
+        <div className="guide-content">
           <h2>The Building Block</h2>
           <ul>
             <li>General Ledger</li>
@@ -20,6 +22,6 @@ export default function guide() {
   );
 }
 
-// export function links() {
-//   return [{ rel: "stylesheet", href: guideLink }];
-// }
+export function links() {
+  return [{ rel: "stylesheet", href: guideLink }];
+}

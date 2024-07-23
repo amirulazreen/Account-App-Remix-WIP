@@ -3,7 +3,7 @@ import AddTransactionLink from "../styles/AddTransaction.css";
 import GeneralLedgerLink from "../styles/GeneralLedger.css";
 import GeneralLedger from "../components/GeneralLedger";
 import { getStoredNotes, storeNotes } from "../data/Transaction";
-import { redirect, useLoaderData } from "@remix-run/react";
+import { redirect, useLoaderData, Link } from "@remix-run/react";
 
 export default function account() {
   const transactions = useLoaderData();
@@ -52,4 +52,28 @@ export async function action({ request }) {
   const updatedNotes = existingNote.concat(noteData);
   await storeNotes(updatedNotes);
   return redirect("/account");
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+
+  if (isRouteErrorResponse(error)) {
+    return (
+      <main>
+        <NewNote />
+        <p className="info-message">{error.data.message}</p>
+      </main>
+    );
+  } else if (error instanceof Error) {
+    return (
+      <main className="error">
+        <h1>Cannot fetch data from server</h1>
+        <p>
+          <Link to={"/"}>Back to safety</Link>
+        </p>
+      </main>
+    );
+  } else {
+    return <h1>Unknown Error</h1>;
+  }
 }

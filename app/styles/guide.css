@@ -1,0 +1,8 @@
+.guide-content {
+  border: black solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 50%;
+}
