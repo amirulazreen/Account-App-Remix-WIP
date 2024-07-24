@@ -1,5 +1,5 @@
 import { Link, useLoaderData, json } from "@remix-run/react";
-import { getStoredNotes } from "../data/Transaction";
+import { getTransactions } from "../data/Transaction";
 import GeneralLedgerLink from "../styles/GeneralLedger.css";
 
 export default function NoteDetail() {
@@ -39,7 +39,7 @@ export default function NoteDetail() {
 }
 
 export async function loader({ params }) {
-  const notes = await getStoredNotes();
+  const notes = await getTransactions();
   const noteID = params.transactionId;
   const selectedNote = notes.find((note) => note.id === noteID);
 

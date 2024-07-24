@@ -2,8 +2,14 @@ import AddTransaction from "../components/AddTransaction";
 import AddTransactionLink from "../styles/AddTransaction.css";
 import GeneralLedgerLink from "../styles/GeneralLedger.css";
 import GeneralLedger from "../components/GeneralLedger";
-import { getStoredNotes, storeNotes } from "../data/Transaction";
-import { redirect, useLoaderData, Link } from "@remix-run/react";
+import { getTransactions, storeTransaction } from "../data/Transaction";
+import {
+  redirect,
+  useLoaderData,
+  Link,
+  useRouteError,
+  isRouteErrorResponse,
+} from "@remix-run/react";
 
 export default function account() {
   const transactions = useLoaderData();
@@ -23,7 +29,7 @@ export function links() {
 }
 
 export async function loader() {
-  const transactions = await getStoredNotes();
+  const transactions = await getTransactions();
   if (!transactions || transactions.length === 0) {
     throw json(
       { message: "Could not find any transaction" },
@@ -38,19 +44,19 @@ export async function loader() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const noteData = Object.fromEntries(formData);
+  const transactionData = Object.fromEntries(formData);
 
-  const debit = parseInt(noteData.debitAmount);
-  const credit = parseInt(noteData.creditAmount);
+  const debit = parseInt(transactionData.debitAmount);
+  const credit = parseInt(transactionData.creditAmount);
 
   if (debit + credit !== 0) {
     return { message: "debit plus credit amount must equal 0" };
   }
 
-  noteData.id = new Date().toISOString();
-  const existingNote = await getStoredNotes();
-  const updatedNotes = existingNote.concat(noteData);
-  await storeNotes(updatedNotes);
+  transactionData.id = new Date().toISOString();
+  const existingNote = await getTransactions();
+  const updatedTransactions = existingNote.concat(transactionData);
+  await storeTransaction(updatedTransactions);
   return redirect("/account");
 }
 
