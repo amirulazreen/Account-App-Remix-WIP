@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import styles from "../styles/home.css?url";
+import styles from "../styles/home.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 export default function Index() {
   return (
