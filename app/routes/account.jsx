@@ -1,6 +1,6 @@
 import AddTransaction from "../components/AddTransaction";
-import AddTransactionLink from "../styles/AddTransaction.css";
-import GeneralLedgerLink from "../styles/GeneralLedger.css";
+import "../styles/AddTransaction.css";
+import "../styles/GeneralLedger.css";
 import GeneralLedger from "../components/GeneralLedger";
 import { getTransactions, storeTransaction } from "../data/Transaction";
 import {
@@ -11,6 +11,8 @@ import {
   isRouteErrorResponse,
 } from "@remix-run/react";
 
+console.log("haha");
+
 export default function account() {
   const transactions = useLoaderData();
   return (
@@ -19,13 +21,6 @@ export default function account() {
       <GeneralLedger transactions={transactions} />
     </>
   );
-}
-
-export function links() {
-  return [
-    { rel: "stylesheet", href: AddTransactionLink },
-    { rel: "stylesheet", href: GeneralLedgerLink },
-  ];
 }
 
 export async function loader() {

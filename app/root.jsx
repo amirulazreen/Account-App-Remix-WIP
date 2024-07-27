@@ -5,12 +5,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "./styles/global.css";
+import "./styles/global.css";
 import MainNavigation from "./components/MainNavigation";
 
 export function Layout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -43,6 +43,6 @@ export function meta() {
   ];
 }
 
-export function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
+// export function links() {
+//   return [{ rel: "stylesheet", href: styles }];
+// }

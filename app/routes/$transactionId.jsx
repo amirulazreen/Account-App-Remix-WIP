@@ -1,6 +1,6 @@
 import { Link, useLoaderData, json } from "@remix-run/react";
 import { getTransactions } from "../data/Transaction";
-import GeneralLedgerLink from "../styles/GeneralLedger.css";
+import "../styles/GeneralLedger.css";
 
 export default function NoteDetail() {
   const transaction = useLoaderData();
@@ -47,8 +47,4 @@ export async function loader({ params }) {
     throw json({ message: "Could not find " + noteID }, { status: 404 });
   }
   return selectedNote;
-}
-
-export function links() {
-  return [{ rel: "stylesheet", href: GeneralLedgerLink }];
 }

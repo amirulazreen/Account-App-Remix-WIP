@@ -1,4 +1,5 @@
-import guideLink from "../styles/guide.css";
+import "../styles/guide.css";
+
 export default function guide() {
   return (
     <>
@@ -20,8 +21,4 @@ export default function guide() {
       </div>
     </>
   );
-}
-
-export function links() {
-  return [{ rel: "stylesheet", href: guideLink }];
 }
