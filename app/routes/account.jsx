@@ -18,6 +18,7 @@ export default function account() {
     <>
       <AddTransaction />
       <GeneralLedger transactions={transactions} />
+      <TrialBalance transactions={transactions} />
     </>
   );
 }
