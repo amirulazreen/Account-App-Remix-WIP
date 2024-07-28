@@ -13,6 +13,9 @@ function MainNavigation() {
         <li className="nav-item">
           <NavLink to={"/guide"}>Guide</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink to={"/home"}>Test</NavLink>
+        </li>
       </ul>
     </nav>
   );

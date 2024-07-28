@@ -42,7 +42,3 @@ export function meta() {
     },
   ];
 }
-
-// export function links() {
-//   return [{ rel: "stylesheet", href: styles }];
-// }

@@ -47,3 +47,7 @@ Form input[type="number"] {
   justify-content: center;
   padding: 10px;
 }
+
+.button-submit-text:hover {
+  background-color: rgb(187, 183, 183);
+}

@@ -10,8 +10,7 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from "@remix-run/react";
-
-console.log("haha");
+import TrialBalance from "../components/TrialBalance";
 
 export default function account() {
   const transactions = useLoaderData();
